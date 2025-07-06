@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <!-- Open Graph Meta Tags for Discord Embed -->
     <meta property="og:title" content="Zen Hub - Roblox Script">
-    <meta property="og:description" content="Join Zen Hub today to challenge games and destroy players">
+    <meta property="og:description" content="Join Zen Hub today for epic Roblox hacks!">
     <meta property="og:url" content="https://getzenned.vercel.app">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://cdn.discordapp.com/icons/1189265387217490051/a_d21c49868a7545872e18696c32ac346e.webp">
@@ -266,29 +266,38 @@
     </footer>
 
     <script>
-        // Anti-inspect protection
+        // Enhanced anti-inspect protection
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
+            alert('Right-click is disabled for security.');
         });
+
         document.addEventListener('keydown', function(e) {
             if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key)) || (e.ctrlKey && e.key === 'U')) {
                 e.preventDefault();
-                alert('Developer tools are disabled for security reasons.');
+                alert('Developer tools and view source are disabled for security reasons.');
             }
         });
+
         let isDevToolsDetected = false;
         const checkDevTools = () => {
             const threshold = 160;
             if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
                 if (!isDevToolsDetected) {
                     isDevToolsDetected = true;
-                    alert('Please refrain from using developer tools ok thx.');
+                    alert('Developer tools detected. Please refrain from using them.');
+                    window.location.href = 'about:blank'; // Redirect to blank page
                 }
             } else {
                 isDevToolsDetected = false;
             }
         };
-        setInterval(checkDevTools, 1000);
+        setInterval(checkDevTools, 500); 
+        
+        const protectScript = () => {
+            const scriptCode = `loadstring(game:HttpGet("https://getzenhub.vercel.app/loader"))()`;
+            return scriptCode.split('').reverse().join('');
+        };
 
         (function() {
             const backgroundCanvas = document.getElementById('background-canvas');
@@ -442,32 +451,32 @@
 
             const getScriptButton = document.getElementById('get-script-btn');
             const notification = document.getElementById('notification');
-            const scriptCode = `loadstring(game:HttpGet("https://getzenhub.vercel.app/loader"))()`;
+            const protectedScript = protectScript();
 
             getScriptButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 if (navigator.clipboard && window.isSecureContext) {
-                    navigator.clipboard.writeText(scriptCode).then(() => {
+                    navigator.clipboard.writeText(protectedScript.split('').reverse().join('')).then(() => {
                         notification.textContent = 'Copied script successfully!';
                         notification.classList.add('show');
                         setTimeout(() => {
                             notification.classList.remove('show');
                         }, 2000);
                     }).catch(() => {
-                        notification.textContent = 'Clipboard blocked! Please copy this script: ' + scriptCode;
+                        notification.textContent = 'Clipboard blocked! Please copy this script: ' + protectedScript.split('').reverse().join('');
                         notification.classList.add('show');
                         setTimeout(() => {
                             notification.classList.remove('show');
                         }, 4000);
-                        prompt('Copy this script manually:', scriptCode);
+                        prompt('Copy this script manually:', protectedScript.split('').reverse().join(''));
                     });
                 } else {
-                    notification.textContent = 'Clipboard blocked! Please copy this script: ' + scriptCode;
+                    notification.textContent = 'Clipboard blocked! Please copy this script: ' + protectedScript.split('').reverse().join('');
                     notification.classList.add('show');
                     setTimeout(() => {
                         notification.classList.remove('show');
                     }, 4000);
-                    prompt('Copy this script manually:', scriptCode);
+                    prompt('Copy this script manually:', protectedScript.split('').reverse().join(''));
                 }
                 window.location.hash = 'pricing';
             });
