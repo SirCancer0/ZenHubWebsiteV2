@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=javascript:void(0)" data-redirect="true">
     <title>Zen Hub - Roblox Script</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <!-- Open Graph Meta Tags for Discord Embed -->
@@ -278,25 +277,27 @@
     <script>
         // Enhanced security measures
         window.onbeforeunload = function(e) {
-            if (e && e.target.location.href.startsWith('view-source:')) {
+            if (e && (e.target.location.href.startsWith('view-source:') || e.ctrlKey)) {
                 e.preventDefault();
                 e.returnValue = '';
-                alert('Access to source code is restricted.');
                 document.getElementById('security-overlay').classList.add('active');
-                return 'Security check in progress...';
+                return 'Access to source code is restricted.';
             }
         };
 
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
+            document.getElementById('security-overlay').classList.add('active');
             alert('Right-click is disabled for security.');
         });
 
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key)) || (e.ctrlKey && e.key === 'U')) {
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.key === 'U') || 
+                (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key))) {
                 e.preventDefault();
-                alert('Developer tools and view source are disabled.');
                 document.getElementById('security-overlay').classList.add('active');
+                alert('Developer tools and view source (Ctrl+U) are disabled.');
             }
         });
 
@@ -306,14 +307,12 @@
             if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
                 if (!isDevToolsDetected) {
                     isDevToolsDetected = true;
-                    alert('Developer tools detected. Access restricted.');
                     document.getElementById('security-overlay').classList.add('active');
+                    alert('Developer tools detected. Access restricted.');
                 }
-            } else {
+            } else if (isDevToolsDetected) {
                 isDevToolsDetected = false;
-                if (document.getElementById('security-overlay').classList.contains('active')) {
-                    document.getElementById('security-overlay').classList.remove('active');
-                }
+                document.getElementById('security-overlay').classList.remove('active');
             }
         };
         setInterval(checkDevTools, 500);
