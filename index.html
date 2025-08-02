@@ -1,56 +1,3 @@
-"
-
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Zen Hub - Roblox Script</title> <link rel="icon" type="image/x-icon" href="/favicon.ico"> <!-- Open Graph Meta Tags for Discord Embed -->
-
-PASTED
-
-in this website code can u make it only html and change the colours to blue and call it proxy hub
-
-Edit
-I'll convert this to a clean HTML-only website with blue colors and rebrand it as "Proxy Hub". Let me create this for you:
-
-
-Proxy Hub - Blue Theme Website
-Interactive artifact 
-I've successfully converted the website to HTML-only with a blue color scheme and rebranded it as "Proxy Hub". Here are the key changes I made:
-
-Color Changes:
-
-Changed from purple to blue theme using various shades of blue (
-#3B82F6, 
-#2563EB, 
-#06B6D4)
-Updated all purple references to blue variants
-Maintained the dark background with blue accents
-Branding Changes:
-
-Changed "Zen Hub" to "Proxy Hub" throughout
-Updated the hero text to focus on proxy solutions
-Modified feature descriptions to be more general/proxy-focused
-Removed Roblox-specific content and replaced with generic pricing tiers
-Simplified Structure:
-
-Removed all the complex canvas animations and effects
-Kept the essential CSS animations (aurora background, grid, glitch effect)
-Removed security protections and devtools detection
-Simplified JavaScript to just handle basic interactions
-Key Features Retained:
-
-Responsive design that works on mobile and desktop
-Smooth scroll animations
-Glitch effect on the logo
-Aurora background with blue theme
-Grid pattern background
-Notification system
-Pricing cards with hover effects
-The website is now a clean, HTML-only version with a professional blue theme that could work for any proxy or networking service. All external dependencies have been removed except for Google Fonts, making it truly standalone.
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +5,6 @@ The website is now a clean, HTML-only version with a professional blue theme tha
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proxy Hub - Advanced Solutions</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Proxy Hub - Advanced Solutions">
     <meta property="og:description" content="Join Proxy Hub today for advanced proxy solutions and network tools">
     <meta property="og:type" content="website">
@@ -84,10 +30,6 @@ The website is now a clean, HTML-only version with a professional blue theme tha
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
-        }
-        
-        html { 
-            scroll-behavior: smooth; 
         }
         
         body {
@@ -146,42 +88,12 @@ The website is now a clean, HTML-only version with a professional blue theme tha
             to { background-position: -50px -50px; }
         }
 
-        .notification {
-            position: fixed; 
-            top: 20px; 
-            right: 20px; 
-            background-color: var(--success-green);
-            color: #fff; 
-            padding: 10px 20px; 
-            border-radius: 8px; 
-            z-index: 10001;
-            opacity: 0; 
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: translateY(-20px);
-        }
-        
-        .notification.show {
-            opacity: 1; 
-            transform: translateY(0);
-        }
-
         .container { 
             width: 90%; 
             max-width: 1100px; 
             margin: 0 auto; 
             position: relative; 
             z-index: 2; 
-        }
-        
-        .animate-on-scroll { 
-            opacity: 0; 
-            transform: translateY(30px); 
-            transition: opacity 0.8s ease, transform 0.8s ease; 
-        }
-        
-        .animate-on-scroll.is-visible { 
-            opacity: 1; 
-            transform: translateY(0); 
         }
         
         .section { 
@@ -374,10 +286,15 @@ The website is now a clean, HTML-only version with a professional blue theme tha
             box-shadow: 0 0 40px var(--glow-blue); 
         }
         
-        .video-container video { 
+        .video-container div { 
             width: 100%; 
-            height: auto; 
-            display: block; 
+            height: 400px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.2rem; 
+            color: white; 
+            background: linear-gradient(45deg, var(--primary-blue), #06B6D4); 
         }
 
         .pricing-grid { 
@@ -498,8 +415,6 @@ The website is now a clean, HTML-only version with a professional blue theme tha
     <div class="aurora-background"></div>
     <div class="grid-background"></div>
 
-    <div id="notification" class="notification">Action completed successfully!</div>
-
     <header class="main-header">
         <div class="container">
             <a href="#" class="logo">Proxy Hub<span class="glitch-overlay">PROXY HUB</span></a>
@@ -515,19 +430,17 @@ The website is now a clean, HTML-only version with a professional blue theme tha
     <main>
         <div class="container">
             <section class="hero section">
-                <div class="animate-on-scroll">
-                    <h1>Advanced proxy solutions for modern needs.</h1>
-                    <p>Welcome to the next evolution of network connectivity. This is Proxy Hub.</p>
-                    <a href="#pricing" class="btn btn-primary" id="get-started-btn">Get Started Now!</a>
-                </div>
+                <h1>Advanced proxy solutions for modern needs.</h1>
+                <p>Welcome to the next evolution of network connectivity. This is Proxy Hub.</p>
+                <a href="#pricing" class="btn btn-primary">Get Started Now!</a>
             </section>
 
             <section id="features" class="section">
-                <div class="section-header animate-on-scroll">
+                <div class="section-header">
                     <h2>Why Proxy Hub</h2>
                 </div>
                 <div class="features-grid">
-                    <div class="feature-card animate-on-scroll">
+                    <div class="feature-card">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.032zM6.577 9.063l.114-.573a.5.5 0 0 1 .928-.287l-2.456 2.6L6.577 9.063z"/>
                         </svg>
@@ -538,14 +451,14 @@ The website is now a clean, HTML-only version with a professional blue theme tha
                         </div>
                         <p>Our infrastructure is monitored around the clock to ensure maximum availability and reliability.</p>
                     </div>
-                    <div class="feature-card animate-on-scroll">
+                    <div class="feature-card">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                         </svg>
                         <h3>Trusted Service</h3>
                         <p>We are a verified, long-standing provider with excellent reputation. Check our community feedback and testimonials.</p>
                     </div>
-                    <div class="feature-card animate-on-scroll">
+                    <div class="feature-card">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
                         </svg>
@@ -556,30 +469,62 @@ The website is now a clean, HTML-only version with a professional blue theme tha
             </section>
 
             <section id="showcase" class="section">
-                <div class="section-header animate-on-scroll">
+                <div class="section-header">
                     <h2>See It In Action</h2>
                 </div>
-                <div class="video-container animate-on-scroll">
-                    <div style="background: linear-gradient(45deg, var(--primary-blue), #06B6D4); height: 400px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white;">
-                        Demo Video Coming Soon
-                    </div>
+                <div class="video-container">
+                    <div>Demo Video Coming Soon</div>
                 </div>
             </section>
 
             <section id="pricing" class="section">
-                <div class="section-header animate-on-scroll">
+                <div class="section-header">
                     <h2>Get Access to Proxy Hub</h2>
                 </div>
                 <div class="pricing-grid">
-                    <div class="price-card animate-on-scroll">
+                    <div class="price-card">
                         <div class="duration">Starter</div>
                         <div class="price">$5/month</div>
                         <a href="#" class="btn btn-primary">Choose Plan</a>
                     </div>
-                    <div class="price-card animate-on-scroll">
+                    <div class="price-card">
                         <div class="duration">Professional</div>
                         <div class="price">$15/month</div>
                         <a href="#" class="btn btn-primary">Choose Plan</a>
                     </div>
-                    <div class="price-card highlight animate-on-scroll">
-                        <div class="best-value-tag"
+                    <div class="price-card highlight">
+                        <div class="best-value-tag">Best Value</div>
+                        <div class="duration">Enterprise</div>
+                        <div class="price">$30/month</div>
+                        <a href="#" class="btn btn-primary">Choose Plan</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="duration">Custom</div>
+                        <div class="price">Contact Us</div>
+                        <a href="#" class="btn btn-primary">Get Quote</a>
+                    </div>
+                </div>
+                <div class="community-cta" style="margin-top: 2rem;">
+                    <p>Need help choosing the right plan? Contact our support team for personalized recommendations.</p>
+                    <a href="#" class="btn btn-primary">Contact Support</a>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="community-cta">
+                    <h2>Join the Community</h2>
+                    <p>Get instant access to support, product updates, and connect with other users. Our community is the heart of Proxy Hub.</p>
+                    <a href="#" class="btn btn-primary">Join Community</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Proxy Hub. All Rights Reserved.</p>
+            <p>For support, please <a href="#">contact our team</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
